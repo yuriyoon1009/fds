@@ -1,4 +1,5 @@
 # 1주차 컴퓨터공학 기초
+marp: md into 
 ## day 1
 * digital literacy
   1. ai의 발달로 다가오는 기본소득 시대에 대한 두 입장
