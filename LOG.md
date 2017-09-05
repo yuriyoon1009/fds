@@ -174,5 +174,3 @@ git push origin mater  : branch를 머지하고 마스터에 푸시
 2. fork & merge
     fork -> clone -> `remote add upstream (url)`
     -> new branch -> new file -> add, commit on branch -> push to orign(fork) branch -> compare & pull request head to base
-
-> 5w1h?
