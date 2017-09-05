@@ -90,3 +90,6 @@ iterable: list, tuple, string, dic, set
 ### Fizz buzz
 - list comprehention 으로 하려면?
     `[i for i in range()]`
+
+### git
+
