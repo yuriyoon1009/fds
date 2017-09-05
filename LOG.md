@@ -8,7 +8,7 @@ marp: md into
     -> 둘 중 어느것을 따를 것인지 판단하는 것 
   2. DL과 엔비디아의 성장의 관계를 이해하는 것 (병렬처리)
     mythbusters gpu vs cpu
----
+
 ### python programming
 foundation knowledge quiz, 박종천
 - 자료형
