@@ -70,3 +70,8 @@ else:
  
 
 - fizzbuzz
+
+## day 2
+### mutable / immutable
+1. mutable: list, dictionary
+2. immutable: string, tuple
