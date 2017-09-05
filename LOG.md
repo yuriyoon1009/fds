@@ -75,3 +75,18 @@ else:
 ### mutable / immutable
 1. mutable: list, dictionary
 2. immutable: string, tuple
+- tuple은 성능이 좋지만 immutable / list는 mutable
+
+### For
+```
+li = [1,2,3,4,5]
+for __var__ in (__list__, __str___):
+    ...
+```
+iterable 객체에만 사용할 수 있다.
+iterable: list, tuple, string, dic, set
+(a *= 2) == (a = a * 2)
+
+### Fizz buzz
+- list comprehention 으로 하려면?
+    `[i for i in range()]`
