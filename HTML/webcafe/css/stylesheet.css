@@ -1,0 +1,144 @@
+@charset "utf-8";
+@import url("./normalize.css");
+@import url("./reset.css");
+@import url("./fonts.css");
+
+/* 본문 style */
+
+html {
+  font-size: 10px;
+}
+
+body {
+  color: #181818;
+  font-size: 1.4rem;
+  font-family: "Noto Sans Regular", sans-serif;
+  background-color: #fff;
+}
+
+
+/* link style */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #f00;
+}
+
+.wrapper {
+  background-color: gray;
+  height: 100vh;
+  /*emmet: h100vh*/
+}
+
+
+/*group selector*/
+
+.header,
+.visual,
+.main-content,
+.slogan,
+.footer {
+  width: 940px;
+  box-sizing: border-box;
+  /* defalut: content-box; */
+  margin: 0 auto;
+  /* 상하, 좌우 단축표기 */
+}
+
+
+/* 헤더 */
+
+.header {
+  background-color: yellow;
+  /* 공통여백 */
+  padding: 0px 30px;
+  position: relative;
+}
+
+
+/* logo */
+
+.logo {
+  background-color: lime;
+  margin: 0;
+  position: absolute;
+  top: 40px;
+  left: 65px;
+}
+
+
+/* info는 flex, main은 float으로 실습한다 */
+
+.info-menu {
+  display: flex;
+  justify-content: flex-end;
+  text-transform: uppercase;
+  /* english 링크 패딩 보정 */
+  position: relative;
+  right: -10px;
+}
+
+
+/* 가짜 ":" 만들기 */
+
+.info-menu li::after {
+  content: ":";
+}
+
+
+/* remove last ":" */
+
+.info-menu li:last-child::after {
+  content: "";
+}
+
+.info-menu a {
+  display: inline-block;
+  padding: 8px 10px;
+}
+
+.visual {
+  background-color: pink;
+  height: 120px;
+}
+
+.main-content {
+  background-color: red;
+  padding: 30px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: stretch; */
+  /* flex-wrap: wrap; */
+}
+
+.slogan {
+  background-color: lime;
+}
+
+.footer {
+  background-color: skyblue;
+}
+
+.group {
+  background: aqua;
+  border: 1px solid #000;
+}
+
+.group1 {
+  width: 250px;
+}
+
+.group2 {
+  width: 380px;
+}
+
+.group3 {
+  width: 190px;
+}
