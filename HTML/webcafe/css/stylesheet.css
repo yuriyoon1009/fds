@@ -3,6 +3,46 @@
 @import url("./reset.css");
 @import url("./fonts.css");
 
+/* 지각내용 */
+
+.readable-hidden {
+  background-color: red;
+  position: absolute;
+  left: -9999em;
+}
+
+.about-html {
+  display: none;
+}
+
+.about-css {
+  display: none;
+}
+
+.web-standards {
+  display: none;
+}
+
+.web-accessibility {
+  display: none;
+  right: 0;
+}
+
+.qna {
+  display: none;
+  right: 0;
+}
+
+.archive {
+  display: none;
+  right: 0;
+}
+
+.sub-menu-active {
+  display: block!important;
+}
+
+
 /* 본문 style */
 
 html {
@@ -54,20 +94,20 @@ a:focus {
 /* 헤더 */
 
 .header {
-  background-color: yellow;
+  background-color: #fff;
   /* 공통여백 */
-  padding: 0px 30px;
+  padding: 0px 30px 30px;
   position: relative;
+  border-radius: 0 0 25px 25px;
 }
 
 
 /* logo */
 
 .logo {
-  background-color: lime;
   margin: 0;
   position: absolute;
-  top: 40px;
+  top: 45px;
   left: 65px;
 }
 
@@ -102,9 +142,124 @@ a:focus {
   padding: 8px 10px;
 }
 
+.main-menu {
+  background: #d88e04 linear-gradient(to bottom, #efc62f 0%, #f77f07 36%, #f77f07 69%, #eaa82e 99%);
+  border-top: 2px solid #000;
+  border-radius: 0 0 5px 5px;
+  height: 47px;
+  padding-left: 225px;
+}
+
+.main-menu::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.main-menu>li {
+  float: left;
+  position: relative;
+}
+
+.main-menu span {
+  color: rgba(255, 255, 255, 0.95);
+  font: 1.6rem "Noto Sans Bold", sans-serif;
+  line-height: 47px;
+  padding: 0 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  /* 구분선 짤림 방지: inline이라서 그러니까 블록으로 변경 */
+  display: block;
+  /* `hand`는 잘못된 표기법 */
+  cursor: pointer;
+  text-shadow: 1px 0 0 #181818, -1px 0 0 #181818, 0 1px 0 #181818, 0 -1px 0 #181818;
+}
+
+
+/* pseudo selector */
+
+.main-menu span:hover,
+.main-menu span:focus {
+  color: #ff0;
+  /* remove outline (keyboard) */
+  outline: 0;
+}
+
+.main-menu span:hover::after,
+.main-menu span:focus::after {
+  display: block;
+  content: "";
+  border-bottom: 2px solid #181818;
+}
+
+.sub-menu {
+  position: absolute;
+  top: 47px;
+  width: auto;
+  font-size: 0;
+  white-space: nowrap;
+  /* 임시 */
+  /* display: none; */
+}
+
+.sub-menu li,
+.sub-menu a {
+  display: inline-block;
+  font-size: 1.4rem;
+}
+
+.sub-menu a {
+  padding: 5px 10px;
+}
+
+.sub-menu a::before {
+  content: "\e800";
+  font-family: "fontello";
+}
+
+.sub-menu a:hover::before,
+.sub-menu a:focus::before {
+  content: "\e801";
+}
+
+
+/* visual */
+
+@keyframes text-ani {
+  /* 0% 는 임의값, from - to도 씀 */
+  0% {
+    font-size: 12px;
+    color: rgba(18, 18, 18, 0);
+    font-family: 'Times New Roman', Times, serif;
+    transform: translate(0, 0);
+  }
+  100% {
+    font-size: 24px;
+    color: rgba(18, 18, 18, 1);
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translate(400px, 75px);
+  }
+}
+
 .visual {
   background-color: pink;
   height: 120px;
+}
+
+.visual-text {
+  width: 500px;
+  /* animation 에 필요한 필수 속성들 */
+  animation-name: text-ani;
+  animation-duration: 1.5s;
+  /* forwards는 끝난 상태로 멈춰있음 */
+  animation-fill-mode: forwards;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  /* 여기부턴 옵션 속성 */
+  /* animation-iteration-count: infinite; */
+  animation-direction: alternate;
+  /* 가속도 */
+  animation-timing-function: ease-in-out;
+  /* abbr */
+  /* animation: text-ani 1s forwards infinite alternate ease-in-out 1s; */
 }
 
 .main-content {
@@ -137,8 +292,10 @@ a:focus {
 
 .group2 {
   width: 380px;
+  background-color: olive;
 }
 
 .group3 {
   width: 190px;
+  background-color: orange;
 }
