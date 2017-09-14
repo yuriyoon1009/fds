@@ -5,13 +5,13 @@ $(document).ready(function() {
   var sub_menu = $('.submenu');
   var menu_bar = $('ul');
 
-  menu_span.hover(function() {
-    $(this).parent().siblings().find('.sub-menu').toggleClass('visible');
-  });
+  // menu_span.hover(function() {
+  //   $(this).parent().siblings().find('.sub-menu').toggleClass('visible');
+  // });
 
-  // menu_bar.hover(function() {
-  //   $(this).find('a').toggleClass('visible');
-  // })
+  menu_bar.hover(function() {
+    $(this).find('a').toggleClass('visible');
+  })
 
   sub_menu.hover(function() {
     $(this).toggleClass('test');
