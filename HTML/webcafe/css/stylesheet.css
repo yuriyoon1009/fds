@@ -5,7 +5,8 @@
 
 /* 지각내용 */
 
-.readable-hidden {
+.readable-hidden,
+legend {
   background-color: red;
   position: absolute;
   left: -9999em;
@@ -70,8 +71,10 @@ a:focus {
 }
 
 .wrapper {
-  background-color: gray;
-  height: 100vh;
+  background-image: url("./images/bg_flower.png"), linear-gradient(to bottom, #aaa 0%, #fff 50%, #fff 100%);
+  background-repeat: no-repeat, repeat;
+  background-color: #aaa;
+  background-position: 50% 0, 0 0;
   /*emmet: h100vh*/
 }
 
@@ -221,12 +224,88 @@ a:focus {
   content: "\e801";
 }
 
-
-/* visual */
-
 @keyframes text-ani {
-  /* 0% 는 임의값, from - to도 씀 */
   0% {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    color: rgba(18, 18 18, 0);
+    transform: translate(0, 0);
+  }
+  50% {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  100% {
+    font-family: Courier New, Courier, monospace;
+    font-size: 24px;
+    color: rgba(18, 18 18, 1);
+    transform: translate(400px, 75px);
+  }
+}
+
+@keyframes img-ani {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.visual {
+  height: 120px;
+  position: relative;
+}
+
+
+/* 꽃 배경을 넣어줄 두 가상박스 생성 */
+
+.visual::before,
+.visual::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 만들었으면 각각 따로 선택해서 진행한다 */
+
+.visual::before {
+  background: url("./images/ani_flower_01.png") no-repeat 0 -15px, url("./images/ani_flower_02.png") no-repeat 670px 0;
+  animation: img-ani 3s infinite alternate;
+}
+
+.visual::after {
+  background: url("./images/ani_flower_03.png") no-repeat 90% 5%, url("./images/ani_flower_04.png") no-repeat 50% 50%;
+  animation: img-ani 3s infinite alternate-reverse;
+}
+
+.visual-text {
+  width: 500px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* animation-name: text-ani;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, .12, .31, 1.05); */
+  animation: text-ani 3s forwards 0.5s 3 alternate cubic-bezier(.5, .12, .31, 1.05);
+}
+
+
+/* visual keyframes 0913 ver. */
+
+
+/* @keyframes text-ani { */
+
+
+/* 0% 는 임의값, from - to도 씀 */
+
+
+/* 0% {
     font-size: 12px;
     color: rgba(18, 18, 18, 0);
     font-family: 'Times New Roman', Times, serif;
@@ -238,32 +317,59 @@ a:focus {
     font-family: Arial, Helvetica, sans-serif;
     transform: translate(400px, 75px);
   }
-}
+}  */
 
-.visual {
-  background-color: pink;
-  height: 120px;
-}
 
-.visual-text {
+/* visual-text 0913 ver. */
+
+
+/* .visual-text {
   width: 500px;
   /* animation 에 필요한 필수 속성들 */
-  animation-name: text-ani;
-  animation-duration: 1.5s;
-  /* forwards는 끝난 상태로 멈춰있음 */
-  animation-fill-mode: forwards;
-  /* font-family: Georgia, 'Times New Roman', Times, serif; */
-  /* 여기부턴 옵션 속성 */
-  /* animation-iteration-count: infinite; */
-  animation-direction: alternate;
-  /* 가속도 */
-  animation-timing-function: ease-in-out;
-  /* abbr */
-  /* animation: text-ani 1s forwards infinite alternate ease-in-out 1s; */
-}
+
+
+/* animation-name: text-ani;
+animation-duration: 1.5s; */
+
+
+/* forwards는 끝난 상태로 멈춰있음 */
+
+
+/* 
+animation-fill-mode: forwards; */
+
+
+/* font-family: Georgia, 'Times New Roman', Times, serif; */
+
+
+/* 여기부턴 옵션 속성 */
+
+
+/* animation-iteration-count: infinite; */
+
+
+/* 
+animation-direction: alternate; */
+
+
+/* 가속도 */
+
+
+/* 
+animation-timing-function: ease-in-out; */
+
+
+/* abbr */
+
+
+/* animation: text-ani 1s forwards infinite alternate ease-in-out 1s; */
+
+
+/* } */
 
 .main-content {
-  background-color: red;
+  background-color: #ddd;
+  border-radius: 25px 25px 0 0;
   padding: 30px;
   min-height: 400px;
   display: flex;
@@ -271,6 +377,111 @@ a:focus {
   justify-content: space-between;
   /* align-items: stretch; */
   /* flex-wrap: wrap; */
+}
+
+.login {
+  background: radial-gradient(circle at right top, #efc62f, #d88e04);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 0 0 #aaa;
+}
+
+.login-heading {
+  color: #ff0;
+  font-size: 1.5rem;
+  font-family: "Noto Sans Bold";
+  margin: 0 0 10px 10px;
+}
+
+
+/* border-radius 순서 주의 */
+
+.login-form {
+  background: #fff;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+
+.login-form fieldset {
+  background: yellow;
+  position: relative;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 4px;
+}
+
+.user-email,
+.user-pw {
+  background: pink;
+  margin-bottom: 6px;
+  /* font-size: 0; */
+}
+
+.login-form label {
+  display: inline-block;
+  background: lime;
+  width: 4em;
+  font-size: 1.2rem;
+}
+
+.login-form input {
+  width: 98px;
+  height: 22px;
+  border: 1px solid #aaa;
+  padding: 0 0 0 5px;
+}
+
+.btn-login {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  background: #f00;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 5px 0;
+  border: 0;
+}
+
+
+/* .login-form 과 연계해서 모서리, 패딩 주기 */
+
+.member {
+  /* display: flex;
+  justify-content: space-between; */
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 10px 10px 10px;
+}
+
+.member li {
+  letter-spacing: -1px;
+}
+
+.member li:nth-child(1) {
+  float: left;
+}
+
+.member li:nth-child(2) {
+  float: right;
+}
+
+.member a {
+  padding: 5px 0;
+}
+
+.member a::before {
+  content: "g";
+  font-family: "webcafeIcon";
+  position: relative;
+  top: 2px;
+}
+
+.member::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .slogan {
@@ -283,7 +494,6 @@ a:focus {
 
 .group {
   background: aqua;
-  border: 1px solid #000;
 }
 
 .group1 {
