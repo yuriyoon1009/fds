@@ -16,7 +16,7 @@
 <body>
   <div class="wrapper">
     <header class="header">
-      <h1 class="logo">
+      <h1 class="logo" alt="web cafe" title="웹카페">
         <a href="#">
           <img src="images/logo.png" alt="web cafe">
         </a>
@@ -117,8 +117,50 @@
             <li><a href="#">아이디/비밀번호 찾기</a></li>
           </ul>
         </div>
+        <div class="validation">
+          <h2 class="readable-hidden">"유효성 검사 배너 링크"</h2>
+          <ul class="validation-list">
+            <li>
+              <a href="https://validator.w3.org/" target="_blank" title="마크업 유효성 검사 사이트로 이동(새창)">W3C Markup Validation</a>
+            </li>
+            <li>
+              <a href="https://jigsaw.w3.org/css-validator/" target="_blank" title="CSS 유효성 검사 사이트로 이동(새창)">W3C CSS Validation Service</a>
+            </li>
+          </ul>
+        </div>
+        <div class="term">
+          <h2 class="term-heading">웹 관련 용어</h2>
+          <dl class="term-list">
+            <dt class="term-list-heading">웹 표준 이란?</dt>
+            <dd class="term-list-thumbnail">
+              <img src="./images/web_standards.gif" alt="W3C 로고">
+            </dd>
+            <dd class="term-list-brief">W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...</dd>
+          </dl>
+        </div>
+        <!-- <div class="term">
+          <h2>웹 관련 용어</h2>
+          <div class="term-text">
+            <h3>웹표준 이란&quest;</h3>
+            <p>W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...</p>
+            <div class="term-thumbnail"></div>
+          </div>
+        </div> -->
       </div>
-      <div class="group group2">그룹2</div>
+      <div class="group group2">
+        <div class="search">
+          <h2 class="search-heading">자료검색</h2>
+          <form action="javascript:alert('검색완료.');" class="search-form">
+            <fieldset>
+              <div class="search-flex">
+                <legend>검색어를 입력하는 폼</legend>
+                <label for="keyword">자료검색</label><input class="search-form-input" type="text" id="keyword" placeholder="검색어를 입력하세요." required>
+                <button class="search-form-btn">검색</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
       <div class="group group3">그룹3</div>
     </main>
     <article class="slogan">

@@ -6,7 +6,8 @@
 /* 지각내용 */
 
 .readable-hidden,
-legend {
+legend,
+.search-heading {
   background-color: red;
   position: absolute;
   left: -9999em;
@@ -141,7 +142,6 @@ a:focus {
 }
 
 .info-menu a {
-  display: inline-block;
   padding: 8px 10px;
 }
 
@@ -206,7 +206,6 @@ a:focus {
 
 .sub-menu li,
 .sub-menu a {
-  display: inline-block;
   font-size: 1.4rem;
 }
 
@@ -367,8 +366,11 @@ animation-timing-function: ease-in-out; */
 
 /* } */
 
+
+/* 메인 컨텐츠 */
+
 .main-content {
-  background-color: #ddd;
+  background-color: #fff;
   border-radius: 25px 25px 0 0;
   padding: 30px;
   min-height: 400px;
@@ -388,7 +390,7 @@ animation-timing-function: ease-in-out; */
 
 .login-heading {
   color: #ff0;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: "Noto Sans Bold";
   margin: 0 0 10px 10px;
 }
@@ -403,7 +405,6 @@ animation-timing-function: ease-in-out; */
 }
 
 .login-form fieldset {
-  background: yellow;
   position: relative;
   border-bottom: 1px solid #aaa;
   padding-bottom: 4px;
@@ -411,14 +412,11 @@ animation-timing-function: ease-in-out; */
 
 .user-email,
 .user-pw {
-  background: pink;
   margin-bottom: 6px;
   /* font-size: 0; */
 }
 
 .login-form label {
-  display: inline-block;
-  background: lime;
   width: 4em;
   font-size: 1.2rem;
 }
@@ -484,17 +482,169 @@ animation-timing-function: ease-in-out; */
   clear: both;
 }
 
+
+/* 유효성검사 배너 링크 */
+
+
+/* .validation {
+  background: yellow;
+  margin-top: 20px;
+}
+
+.validation-list {}
+
+.validation-list li {
+  margin: 12px 0;
+}
+
+.validation-list>li>a {
+  display: block;
+  background: blue;
+}
+
+.validation-list>li>a::before {
+  background: image("./images/")
+} */
+
+.validation {
+  margin-top: 20px;
+  background: yellow;
+}
+
+.validation li {
+  margin-bottom: 10px
+}
+
+.validation a {
+  background: url("./images/validation_icon.png") no-repeat 5% 50%, linear-gradient(to bottom, #eee, #bbb);
+  display: block;
+  padding: 0 10px 8px 45px;
+  /* background: pink; */
+  border: 1px solid #aaa;
+  border-radius: 15px;
+}
+
+
+/* 웹 관련 용어 */
+
+.term {
+  background: linear-gradient(to bottom, #eee, #bbb);
+  padding: 15px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.term-heading {
+  font-family: "Noto Sans Bold";
+  font-size: 1.6rem;
+  /* margin-bottom: 10px; */
+  /* position: relative; */
+}
+
+.term-list::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.term-list-heading {
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 11px;
+}
+
+.term-list-heading,
+.term-list-brief {
+  float: right;
+  width: 145px;
+}
+
+.term-list :nth-child(6n+4),
+.term-list :nth-child(6n+6) {
+  float: left;
+}
+
+.term-list :nth-child(6n+5) {
+  float: right;
+}
+
+.term-list-thumbnail {
+  background: steelblue;
+  float: left;
+  margin-top: 15px;
+}
+
+.term-list-thumbnail img {
+  display: block;
+}
+
+
+/* 검색바 */
+
+.search {
+  background: linear-gradient(to bottom, #acaaac, #fff);
+  padding: 23px 23px 10px 23px;
+  border: 1px solid #aaa;
+  border-bottom: none;
+  border-radius: 15px 15px 0 0;
+}
+
+.search-form {
+  background: yellow;
+}
+
+
+/* .search-form fieldset {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.search-flex {
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form label::before {
+  content: "z";
+  font-family: "webcafeIcon";
+  position: relative;
+  top: 2px;
+}
+
+.search-form-input {
+  /* width: 200px; */
+  width: calc(100% - 140px);
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 0 0 0 5px;
+  height: 22px;
+  font-size: 1.2rem;
+}
+
+.search-form-btn {
+  background: linear-gradient(to bottom, #454345, #91908d);
+  color: white;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+
+
+/* 슬로건 */
+
 .slogan {
   background-color: lime;
 }
+
+
+/* 푸터 */
 
 .footer {
   background-color: skyblue;
 }
 
-.group {
-  background: aqua;
-}
+.group {}
 
 .group1 {
   width: 250px;
@@ -502,10 +652,8 @@ animation-timing-function: ease-in-out; */
 
 .group2 {
   width: 380px;
-  background-color: olive;
 }
 
 .group3 {
   width: 190px;
-  background-color: orange;
 }
